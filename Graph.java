@@ -35,7 +35,7 @@ public class Graph<Node extends Comparable<Node>> {
       * @modifies 
       * @effects Creates a new graph with g_name name
       */
-    public Graph(String name){
+    public Graph(String name) { //TODO WB check? add assert?
       node_map = new HashMap<>();
       this.g_name = name;
       checkRep();
@@ -49,7 +49,8 @@ public class Graph<Node extends Comparable<Node>> {
       * @effects add the node to the container of Nodes in this Graph.
       * @throws NodeExistsInGraphExeption if the node is already in this
       */
-    public void addNode(Node node) throws NodeExistsInGraphExeption{
+    public void addNode(Node node) throws 
+    NodeExistsInGraphExeption{
       checkRep();
       if (node_map.putIfAbsent(node , new HashSet<>()) != null) {
     	  checkRep();
@@ -67,8 +68,8 @@ public class Graph<Node extends Comparable<Node>> {
       * @throws EdgeExistsInGraphExeption if the Edge is already in this
       * @throws NodeNotInGraphException if parent_node || child_nod not in graph
     */  
-    public void addEdge(Node parent_node, Node child_node)
-    throws EdgeExistsInGraphExeption, NodeNotInGraphException{
+    public void addEdge(Node parent_node, Node child_node) throws 
+    EdgeExistsInGraphExeption, NodeNotInGraphException{
       checkRep();
       if (!node_map.containsKey(parent_node) ||
     	  !node_map.containsKey(child_node)) {
@@ -79,8 +80,6 @@ public class Graph<Node extends Comparable<Node>> {
       }
       node_map.get(parent_node).add(child_node);
       checkRep();
-
-     
     }
 
     /**
@@ -90,7 +89,8 @@ public class Graph<Node extends Comparable<Node>> {
       * @return a unmodifiable Set of all the nodes in this
       * @throws EmptyGraphException if there is no nodes in the graph
     */
-    public Set<Node> getNodes () throws EmptyGraphException{
+    public Set<Node> getNodes () throws 
+    EmptyGraphException{
       checkRep();
       if (node_map.isEmpty()) {
         checkRep();
@@ -109,7 +109,8 @@ public class Graph<Node extends Comparable<Node>> {
       * @throws NoChildrenException if there is no Children nodes 
       * @throws NodeNotInGraphException if parent node not in graph
     */
-    public Set<Node> getChildrenNodes(Node parent_node) throws NodeNotInGraphException , NoChildrenException{
+    public Set<Node> getChildrenNodes(Node parent_node) throws 
+    NodeNotInGraphException , NoChildrenException{
       checkRep();
       if (!node_map.containsKey(parent_node)){
         checkRep();
@@ -121,7 +122,6 @@ public class Graph<Node extends Comparable<Node>> {
       }
       checkRep();
       return Collections.unmodifiableSet(node_map.get(parent_node));
-      
     }
 
     /**

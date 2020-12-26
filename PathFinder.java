@@ -35,7 +35,7 @@ public class PathFinder<N extends Comparable<N>,P extends Path<N, P>>  {
      * 		   with a suitable error massage
      * @throws EmptyGraphException in case the given graph is empty
      */
-    public P findShortestPath(Graph<N> graph , Set<P> starts, Set<N> goals) //TODO handle Exeptions
+    public P findShortestPath(Graph<N> graph , Set<P> starts, Set<N> goals)
     throws NotValidArgumentException, EmptyGraphException{
     	
     	graph.getNodes();
@@ -51,7 +51,7 @@ public class PathFinder<N extends Comparable<N>,P extends Path<N, P>>  {
         PriorityQueue<P> active = new PriorityQueue<>();
         Set<N> finished = new HashSet<>();
 
-        for (P start : starts ){
+        for (P start : starts ) {
         	try {
         		graph.getChildrenNodes(start.getEnd());
         	}
