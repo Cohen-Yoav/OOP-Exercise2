@@ -108,7 +108,9 @@ public class TestDriver {
 
 
   	private void createGraph(String graphName) {
-		graphs.putIfAbsent(graphName, new Graph<WeightedNode>(graphName));
+		if(graphs.putIfAbsent(graphName, new Graph<WeightedNode>(graphName)) != null){
+			return;
+		}
 		output.println("created graph " + graphName);
 		  
   	}
