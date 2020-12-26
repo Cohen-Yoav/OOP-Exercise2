@@ -1,0 +1,14 @@
+# addNode method Testing file
+
+# check that the node was added to the graph
+CreateNode n1 5
+CreateGraph graph1
+AddNode graph1 n1
+ListNodes graph1
+
+# check that adding a node 2 times only add it once to the graph
+CreateNode n2 2
+AddNode graph1 n2
+AddNode graph1 n2
+ListNodes graph1
+

@@ -1,0 +1,20 @@
+# getNodes method Testing file
+
+CreateGraph graph1
+ListNodes graph1
+
+CreateNode n1 5
+AddNode graph1 n1
+ListNodes graph1
+
+CreateNode n2 2
+AddNode graph1 n2
+ListNodes graph1
+
+CreateNode n3 9
+CreateNode n4 4
+CreateNode n5 5
+AddNode graph1 n3
+AddNode graph1 n4
+AddNode graph1 n5
+ListNodes graph1

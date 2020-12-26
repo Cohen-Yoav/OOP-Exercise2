@@ -1,0 +1,44 @@
+# findShortestPath method Testing file
+
+CreateGraph graph1
+
+CreateNode A 2
+CreateNode B 1
+CreateNode C 3
+CreateNode D 1
+CreateNode E 4
+
+# check empty graph
+FindPath graph1 A -> E
+
+AddNode graph1 A
+# check for sp from node to itself
+FindPath graph1 A -> A
+
+# check for sp where goal is not part of the graph
+FindPath graph1 A -> E
+AddNode graph1 B
+AddEdge graph1 A B
+
+# check standart sp from A to child B
+FindPath graph1 A -> B
+
+# check when not all goals are in graph
+FindPath graph1 A -> E B
+
+# check when not all starts are in graph
+FindPath graph1 A E -> B
+AddNode graph1 C
+AddNode graph1 D
+AddNode graph1 E
+
+AddEdge graph1 A C
+AddEdge graph1 B D
+AddEdge graph1 B C
+AddEdge graph1 C D
+AddEdge graph1 C E
+AddEdge graph1 D E
+
+FindPath graph1 A -> E
+FindPath graph1 A B C -> E D A
+FindPath graph1 B C -> E D

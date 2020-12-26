@@ -1,0 +1,44 @@
+# findShortestPath method Testing file
+
+created graph graph1
+
+created node A with cost 2
+created node B with cost 1
+created node C with cost 3
+created node D with cost 1
+created node E with cost 4
+
+# check empty graph
+shortest path in graph1:
+
+added node A to graph1
+# check for sp from node to itself
+shortest path in graph1: A
+
+# check for sp where goal is not part of the graph
+shortest path in graph1:
+added node B to graph1
+added edge from A to B in graph1
+
+# check standart sp from A to child B
+shortest path in graph1: A B
+
+# check when not all goals are in graph
+shortest path in graph1: A B
+
+# check when not all starts are in graph
+shortest path in graph1: A B
+added node C to graph1
+added node D to graph1
+added node E to graph1
+
+added edge from A to C in graph1
+added edge from B to D in graph1
+added edge from B to C in graph1
+added edge from C to D in graph1
+added edge from C to E in graph1
+added edge from D to E in graph1
+
+shortest path in graph1: A B D E
+shortest path in graph1: A
+shortest path in graph1: B D

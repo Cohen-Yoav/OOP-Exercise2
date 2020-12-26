@@ -1,0 +1,13 @@
+# addNode method Testing file
+
+# check that the node was added to the graph
+created node n1 with cost 5
+created graph graph1
+added node n1 to graph1
+graph1 contains: n1
+
+# check that adding a node 2 times only add it once to the graph
+created node n2 with cost 2
+added node n2 to graph1
+graph1 contains: n1 n2
+

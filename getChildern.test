@@ -1,0 +1,29 @@
+# getChildren method Testing file
+
+CreateGraph graph1
+CreateNode n1 5
+AddNode graph1 n1
+ListChildren graph1 n1
+
+CreateNode n2 2
+ListChildren graph1 n2
+
+AddNode graph1 n2
+AddEdge graph1 n1 n2
+ListChildren graph1 n1
+
+CreateNode n3 9
+AddNode graph1 n3
+AddEdge graph1 n1 n3
+ListChildren graph1 n1
+
+CreateNode n4 4
+CreateNode n5 5
+CreateNode n6 5
+AddNode graph1 n4
+AddNode graph1 n5
+AddNode graph1 n6
+AddEdge graph1 n1 n4
+AddEdge graph1 n1 n5
+AddEdge graph1 n1 n6
+ListChildren graph1 n1
