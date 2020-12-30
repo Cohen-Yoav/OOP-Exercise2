@@ -3,28 +3,24 @@ package homework2;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-//import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 /**
  * A Graph models a Collection of Nodes and Edges. Graphs are mutable.
- * Edges are directed, the edge direction defines the parent node and child node.
+ * Edges are directed, the edge direction is defined by the parent node and child node.
  * we assume that there is only one edge from parent node to child node.
  * we assume that the type Node is immutable.
  */
 public class Graph<Node extends Comparable<Node>> {
 
-    // RepInvariant:
-  	//   (g_name != null) && (node_map != null)
-  	//   
-  	//
+  // RepInvariant:
+  	//  (g_name != null) && (node_map != null)
 
-  	// Abstraction Function:
-  	//
+  // Abstraction Function:
     //  Directed Graph is an object the represents a collection of :
-    // nodes - a group of object, that can be complex.
-    // edges - represents the connection between the different nodes.
+    //  nodes - a group of object, that can be complex.
+    //  edges - represents the connection between the different nodes.
           
     private final Map<Node,Set<Node>> node_map;
     private final String g_name;
@@ -35,7 +31,7 @@ public class Graph<Node extends Comparable<Node>> {
       * @modifies 
       * @effects Creates a new graph with g_name name
       */
-    public Graph(String name) { //TODO WB check? add assert?
+    public Graph(String name) {
       node_map = new HashMap<>();
       this.g_name = name;
       checkRep();
@@ -142,5 +138,3 @@ public class Graph<Node extends Comparable<Node>> {
       "the map of the graph cannot be null pointer";
     }
 }
-///yoav and binyamin learn git
-
